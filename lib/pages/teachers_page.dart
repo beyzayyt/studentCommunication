@@ -17,13 +17,13 @@ class _TeachersPageState extends State<TeachersPage> {
       appBar: AppBar(title: const Text("Students")),
       body: Column(
         children: [
-          const PhysicalModel(
+           PhysicalModel(
             color : Colors.white,
             elevation: 10,
             child: Center(
               child: Padding(
                 padding: EdgeInsets.symmetric(vertical: 32.0, horizontal: 32.0),
-                child: Text("10 teachers"),
+                child: Text("${widget.teachersRepository.teacher.length} teachers"),
               ),
             ),
           ),

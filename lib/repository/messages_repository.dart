@@ -4,6 +4,8 @@ class MessagesRepository {
     Message("Hi", "Beyza", DateTime.now().subtract(const Duration(minutes: 1))),
     Message("How are you", "Elis", DateTime.now())
   ];
+
+  int newMessageNumber = 0;
 }
 
 class Message {

@@ -53,17 +53,17 @@ class _HomePageState extends State<HomePage> {
                 onPressed: () {
                   _goStudents(context);
                 },
-                child: const Text("Go to Students")),
+                child: Text("${studentsRepository.students.length} students")),
             ElevatedButton(
                 onPressed: () {
                   _goMessages(context);
                 },
-                child: const Text("Go to Messages")),
+                child:  Text(" ${messagesRepository.newMessageNumber} new messages")),
             ElevatedButton(
                 onPressed: () {
                   _goTeachers(context);
                 },
-                child: const Text("Go to Teachers")),
+                child:  Text("${teachersRepository.teacher.length} teachers ")),
           ],
         ),
       ),
@@ -99,10 +99,13 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  void _goMessages(BuildContext context) {
-    Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+  void _goMessages(BuildContext context) async{
+   await Navigator.of(context).push(MaterialPageRoute(builder: (context) {
       return MessagesPage(messagesRepository);
     }));
+   setState(() {
+
+   });
   }
 
   void _goTeachers(BuildContext context) {

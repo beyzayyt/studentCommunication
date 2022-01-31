@@ -14,6 +14,12 @@ class MessagesPage extends StatefulWidget {
 }
 
 class _MessagesPageState extends State<MessagesPage> {
+
+  @override
+  void initState() {
+    widget.messagesRepository.newMessageNumber = 0;
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,8 +49,8 @@ class _MessagesPageState extends State<MessagesPage> {
                             border: Border.all(),
                             borderRadius:
                             const BorderRadius.all(Radius.circular(25.0))),
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                        child: const Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 16.0),
                           child: TextField(
                             decoration:
                             InputDecoration(border: InputBorder.none),
